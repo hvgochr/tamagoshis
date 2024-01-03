@@ -1,6 +1,5 @@
 package tamagoshis.model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -163,9 +162,9 @@ public abstract class Tamagoshis {
      * @param energy the energy of the Tamagoshi
      */
     public void setEnergy(int energy) {
-        if (this.energy + energy > maxEnergy)
+        if (energy > maxEnergy)
             this.energy = maxEnergy;
-        else if (this.energy + energy < 0)
+        else if (energy < 0)
             this.energy = 0;
         else
             this.energy = energy;
@@ -177,9 +176,9 @@ public abstract class Tamagoshis {
      * @param fun the fun of the Tamagoshi
      */
     public void setFun(int fun) {
-        if (this.fun + fun > maxFun)
+        if (fun > maxFun)
             this.fun = maxFun;
-        else if (this.fun + fun < 0)
+        else if (fun < 0)
             this.fun = 0;
         else
             this.fun = fun;
