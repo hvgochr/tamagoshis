@@ -1,6 +1,5 @@
 package tamagoshis.model;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Tamagoshis {
@@ -89,6 +88,15 @@ public abstract class Tamagoshis {
      */
     public int getAge() {
         return age;
+    }
+
+    /**
+     * Returns the maximum age of the Tamagoshi
+     * 
+     * @return the maximum age of the Tamagoshi
+     */
+    public int getMaxAge() {
+        return MAX_AGE;
     }
 
     /**
