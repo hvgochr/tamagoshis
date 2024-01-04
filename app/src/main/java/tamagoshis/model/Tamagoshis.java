@@ -51,17 +51,15 @@ public abstract class Tamagoshis {
      * 
      * @return the current state of the tamagoshis
      */
-    public ArrayList<String> getState() {
-        ArrayList<String> state = new ArrayList<>();
+    public String getState() {
         if (energy <= alertEnergy)
-            state.add("J'ai faim");
-        if (fun <= alertFun)
-            state.add("Je m'ennuie");
-        if (energy <= 0 || fun <= 0)
-            state.add("Je suis mort");
-        if (age >= MAX_AGE)
-            state.add("Je suis mort de vieillesse");
-        return state;
+            return "J'ai faim";
+        else if (fun <= alertFun)
+            return "Je m'ennuie";
+        else if (energy <= 0 || fun <= 0)
+            return "Je suis mort";
+        else 
+            return "Tout va bien";
     }
 
     /**
