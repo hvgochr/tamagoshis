@@ -14,6 +14,7 @@ public abstract class Tamagoshis {
     private int fun;
     private final int maxFun;
     private final int alertFun;
+    private String causeOfDeath;
 
     /**
      * Constructor of Tamagoshis
@@ -71,7 +72,7 @@ public abstract class Tamagoshis {
      * @param max the maximum value
      * @return a random number between min and max
      */
-    public int randomIntGenerator(int min, int max) {
+    public static int randomIntGenerator(int min, int max) {
         return min + new Random().nextInt(max - min + 1);
     }
 
@@ -162,9 +163,9 @@ public abstract class Tamagoshis {
      * @param energy the energy of the Tamagoshi
      */
     public void setEnergy(int energy) {
-        if (this.energy + energy > maxEnergy)
+        if (energy > maxEnergy)
             this.energy = maxEnergy;
-        else if (this.energy + energy < 0)
+        else if (energy < 0)
             this.energy = 0;
         else
             this.energy = energy;
@@ -176,12 +177,35 @@ public abstract class Tamagoshis {
      * @param fun the fun of the Tamagoshi
      */
     public void setFun(int fun) {
-        if (this.fun + fun > maxFun)
+        if (fun > maxFun)
             this.fun = maxFun;
-        else if (this.fun + fun < 0)
+        else if (fun < 0)
             this.fun = 0;
         else
             this.fun = fun;
+    }
+
+    /**
+     * Returns the cause of death of the Tamagoshi
+     * 
+     * @return the cause of death of the Tamagoshi
+     */
+    public String getCauseOfDeath() {
+        return causeOfDeath;
+    }
+
+    public void checkIfHungry() {
+        if (energy > alertEnergy)
+            System.out.println(this.name + " : j'ai pas très faim");
+        else
+            System.out.println(this.name + " : merci !");
+    }
+
+    public void checkIfBored() {
+        if (fun > alertFun)
+            System.out.println(this.name + " : je m'ennuie pas trop");
+        else
+            System.out.println(this.name + " : on se marre !");
     }
 
 }
