@@ -1,20 +1,19 @@
 package tamagoshis.model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Tamagoshis {
 
-    private String name;
-    private final int MAX_AGE = 10;
+    private final String name;
+    public static final int MAX_AGE = 10;
     private int age;
     private int energy;
-    private int maxEnergy;
-    private int alertEnergy;
+    private final int maxEnergy;
+    private final int alertEnergy;
     private int fun;
-    private int maxFun;
-    private int alertFun;
+    private final int maxFun;
+    private final int alertFun;
 
     /**
      * Constructor of Tamagoshis
