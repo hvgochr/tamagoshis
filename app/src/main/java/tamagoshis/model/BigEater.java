@@ -17,7 +17,7 @@ public class BigEater extends Tamagoshis {
     @Override
     public void passTime() {
         this.setAge(this.getAge() + 1);
-        this.setEnergy(this.getEnergy() - this.randomIntGenerator(1, 3));
+        this.setEnergy(this.getEnergy() - 1);
         this.setFun(this.getFun() - 1);
     }
 
@@ -26,6 +26,7 @@ public class BigEater extends Tamagoshis {
      */
     @Override
     public void play() {
+        this.checkIfBored();
         this.setFun(this.getFun() + 1);
     }
 
@@ -34,7 +35,8 @@ public class BigEater extends Tamagoshis {
      */
     @Override
     public void eat() {
-        this.setEnergy(this.getEnergy() + this.randomIntGenerator(1, 3));
+        this.checkIfHungry();
+        this.setEnergy(this.getEnergy() + Tamagoshis.randomIntGenerator(1, 3));
     }
 
 }
