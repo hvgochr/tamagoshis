@@ -1,6 +1,5 @@
 package tamagoshis.model;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Tamagoshis {
