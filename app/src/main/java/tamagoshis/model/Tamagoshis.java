@@ -4,15 +4,16 @@ import java.util.Random;
 
 public abstract class Tamagoshis {
 
-    private String name;
-    private final int MAX_AGE = 10;
+    private final String name;
+    public static final int MAX_AGE = 10;
     private int age;
     private int energy;
-    private int maxEnergy;
-    private int alertEnergy;
+    private final int maxEnergy;
+    private final int alertEnergy;
     private int fun;
-    private int maxFun;
-    private int alertFun;
+    private final int maxFun;
+    private final int alertFun;
+    private String causeOfDeath;
 
     /**
      * Constructor of Tamagoshis
@@ -51,14 +52,16 @@ public abstract class Tamagoshis {
      * @return the current state of the tamagoshis
      */
     public String getState() {
-        if (energy <= alertEnergy)
-            return "J'ai faim";
-        else if (fun <= alertFun)
-            return "Je m'ennuie";
-        else if (energy <= 0 || fun <= 0)
-            return "Je suis mort";
-        else 
+        String res = "";
+        if (energy < alertEnergy && fun < alertFun)
+            res += "J'ai faim et je m'ennuie";
+        else if (fun < alertFun)
+            res += "Je m'ennuie";
+        else if (energy < alertEnergy)
+            res += "J'ai faim";
+        else
             return "Tout va bien";
+        return res;
     }
 
     /**
@@ -68,7 +71,7 @@ public abstract class Tamagoshis {
      * @param max the maximum value
      * @return a random number between min and max
      */
-    public int randomIntGenerator(int min, int max) {
+    public static int randomIntGenerator(int min, int max) {
         return min + new Random().nextInt(max - min + 1);
     }
 
@@ -188,6 +191,29 @@ public abstract class Tamagoshis {
             this.fun = 0;
         else
             this.fun = fun;
+    }
+
+    /**
+     * Returns the cause of death of the Tamagoshi
+     * 
+     * @return the cause of death of the Tamagoshi
+     */
+    public String getCauseOfDeath() {
+        return causeOfDeath;
+    }
+
+    public void checkIfHungry() {
+        if (energy > alertEnergy)
+            System.out.println(this.name + " : j'ai pas très faim");
+        else
+            System.out.println(this.name + " : merci !");
+    }
+
+    public void checkIfBored() {
+        if (fun > alertFun)
+            System.out.println(this.name + " : je m'ennuie pas trop");
+        else
+            System.out.println(this.name + " : on se marre !");
     }
 
 }
