@@ -1,8 +1,6 @@
 package tamagoshis.game;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.BeforeEach;
