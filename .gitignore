@@ -6,3 +6,7 @@ build
 
 # Ignore Gradle bin
 /app/bin
+
+# Ignore IDE files
+.vscode
+.idea

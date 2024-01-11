@@ -65,6 +65,16 @@ public abstract class Tamagoshis {
     }
 
     /**
+     * Makes the Tamagoshis die and sets the cause of death
+     */
+    public void die() {
+        if (energy <= 0)
+            causeOfDeath = this.name + " qui était un " + this.getClass().getSimpleName() + " est mort de faim";
+        else if (fun <= 0)
+            causeOfDeath = this.name + " qui était un " + this.getClass().getSimpleName() + " est mort d'ennui";
+    }
+
+    /**
      * Returns a random number between min and max
      * 
      * @param min the minimum value
