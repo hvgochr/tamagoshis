@@ -1,9 +1,5 @@
 package tamagoshis.game;
 
-public class RoundTest {
-
-    package tamagoshis.game;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -56,12 +52,10 @@ public class RoundTest {
         int newEnergyTamagoshi1 = this.aliveTamagoshis.get(0).getEnergy();
         int newFunTamagoshi2 = this.aliveTamagoshis.get(1).getFun();
         assertAll("Tamagoshis",
-            () -> assertTrue(newEnergyTamagoshi1 >= initialEnergyTamagoshi1 && newEnergyTamagoshi1 <= initialEnergyTamagoshi1 + 3),
-            () -> assertTrue(newFunTamagoshi2 >= initialFunTamagoshi2 && newFunTamagoshi2 <= initialFunTamagoshi2 + 3)
-        );
+                () -> assertTrue(newEnergyTamagoshi1 >= initialEnergyTamagoshi1
+                        && newEnergyTamagoshi1 <= initialEnergyTamagoshi1 + 3),
+                () -> assertTrue(
+                        newFunTamagoshi2 >= initialFunTamagoshi2 && newFunTamagoshi2 <= initialFunTamagoshi2 + 3));
     }
 
-}
-
-    
 }
