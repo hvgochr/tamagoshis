@@ -94,6 +94,15 @@ public abstract class Tamagoshis {
     }
 
     /**
+     * Returns the maximum age of the Tamagoshi
+     * 
+     * @return the maximum age of the Tamagoshi
+     */
+    public int getMaxAge() {
+        return MAX_AGE;
+    }
+
+    /**
      * Returns the energy of the Tamagoshi
      * 
      * @return the energy of the Tamagoshi
