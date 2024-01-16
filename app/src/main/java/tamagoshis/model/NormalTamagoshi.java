@@ -1,18 +1,18 @@
 package tamagoshis.model;
 
-public class BigEater extends Tamagoshis {
+public class NormalTamagoshi extends Tamagoshis {
 
     /**
-     * Constructor of a BigEater Tamagoshis
+     * Constructor of a NormalTamagoshi Tamagoshis
      * 
      * @param name the name of the BigEater Tamagoshi
      */
-    public BigEater(String name) {
+    public NormalTamagoshi(String name) {
         super(name);
     }
 
     /**
-     * Makes the BigEater Tamagoshi play
+     * Makes the NormalTamagoshi Tamagoshi play
      */
     @Override
     public void play() {
@@ -21,12 +21,12 @@ public class BigEater extends Tamagoshis {
     }
 
     /**
-     * Makes the BigEater Tamagoshi eat
+     * Makes the NormalTamagoshi Tamagoshi eat
      */
     @Override
     public void eat() {
         this.checkIfHungry();
-        this.setEnergy(this.getEnergy() + Tamagoshis.randomIntGenerator(1, 3));
+        this.setEnergy(this.getEnergy() + 1);
     }
 
 }

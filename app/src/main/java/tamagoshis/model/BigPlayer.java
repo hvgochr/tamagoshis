@@ -12,16 +12,6 @@ public class BigPlayer extends Tamagoshis {
     }
 
     /**
-     * Makes the BigPlayer Tamagoshi pass the time
-     */
-    @Override
-    public void passTime() {
-        this.setAge(this.getAge() + 1);
-        this.setEnergy(this.getEnergy() - 1);
-        this.setFun(this.getFun() - 1);
-    }
-
-    /**
      * Makes the BigPlayer Tamagoshi play
      */
     @Override

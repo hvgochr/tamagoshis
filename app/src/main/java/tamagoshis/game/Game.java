@@ -72,7 +72,7 @@ public class Game {
             for (Tamagoshis tamagoshi : this.aliveTamagoshis)
                 System.out.println(
                         tamagoshi.getName() + " qui était un " + tamagoshi.getClass().getSimpleName() + " a survécu");
-            double score = Math.round((double) this.aliveTamagoshis.size() / this.nbTamagoshis * 100);
+            double score = ((double) this.aliveTamagoshis.size() / (double) this.nbTamagoshis) * 100;
             System.out.println("\nNiveau de difficulté: " + this.nbTamagoshis + " Score : " + score + " %");
         }
     }

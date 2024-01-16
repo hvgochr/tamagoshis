@@ -44,7 +44,11 @@ public abstract class Tamagoshis {
     /**
      * Makes the Tamagoshis pass the time
      */
-    public abstract void passTime();
+    public void passTime() {
+        this.setAge(this.getAge() + 1);
+        this.setEnergy(this.getEnergy() - 1);
+        this.setFun(this.getFun() - 1);
+    }
 
     /**
      * Returns the current state of the tamagoshi depending on its energy and fun
