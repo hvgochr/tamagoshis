@@ -8,6 +8,15 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id "org.sonarqube" version "4.2.1.3168"
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "charradeh_charrade_tamagoshis_AY0RxNRv1v0FKQP2R0XX"
+    property "sonar.projectName", "Charrade_Tamagoshis"
+    property "sonar.qualitygate.wait", true 
+  }
 }
 
 repositories {
