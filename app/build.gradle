@@ -25,16 +25,23 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.7.0'
-    implementation 'com.google.guava:guava:30.0-jre'
+    // Use JUnit Jupiter for testing.
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation "org.mockito:mockito-core:3.+"
+    implementation libs.guava
 }
 
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 application {
     // Define the main class for the application.
-    mainClassName = 'tamagoshis.App'
+    mainClass = 'tamagoshis.App'
 }
 
 tasks.named('test') {
