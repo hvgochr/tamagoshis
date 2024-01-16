@@ -64,7 +64,7 @@ public class Game {
      * Checks if the game is over and displays the results if so
      */
     public void checkEndGame() {
-        if (this.aliveTamagoshis.isEmpty() || this.round == Tamagoshis.MAX_AGE) {
+        if (this.aliveTamagoshis.isEmpty() || this.round > Tamagoshis.MAX_AGE) {
             this.isRunning = false;
             System.out.println("\n------------ Fin de la partie -------------\n");
             for (Tamagoshis tamagoshi : this.deadTamagoshis)
